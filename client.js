@@ -2,13 +2,14 @@ import { ReactInstance } from "react-360-web";
 
 import { TooltipModule } from "./modules/Tooltip.module";
 import { TransitionModule } from "./modules/Transition.module";
+import { ImageModule } from "./modules/Image.module";
 
 export let r360;
 
 function init(bundle, parent, options = {}) {
   r360 = new ReactInstance(bundle, parent, {
     fullScreen: true,
-    nativeModules: [new TooltipModule(), new TransitionModule()],
+    nativeModules: [new TooltipModule(), new TransitionModule(), new ImageModule()],
     ...options,
   });
 

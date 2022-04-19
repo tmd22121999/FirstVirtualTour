@@ -28,6 +28,32 @@ export default (locations = {
         img: 'state_administration.jpg',
       },
     ],
+    images: [
+      {
+        width: 400,
+        height: 400,
+        yaw: 11.3,
+        pitch: 0.1,
+        text: 'abctesy',
+        img: 'youth_center.jpg',
+      },
+      {
+        width: 400,
+        height: 400,
+        yaw: 4.7,
+        pitch: 0.16,
+        text: 'test2',
+        img: 'shevchenko_theatre.jpg',
+      },
+      {
+        width: 400,
+        height: 400,
+        yaw: 7.65,
+        pitch: 0.16,
+        text: 'test3',
+        img: 'state_administration.jpg',
+      },
+    ],
     transitions: [
       {
         width: 50,

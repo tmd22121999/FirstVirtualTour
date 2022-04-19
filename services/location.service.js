@@ -23,3 +23,14 @@ export function getListTransitions (location) {
   }
   return [];
 }
+export function getListImages (location) {
+  if (
+    locations[`${location}`] &&
+    locations[`${location}`].images &&
+    locations[`${location}`].images.length &&
+    locations[`${location}`].images.length > 0
+  ) {
+    return locations[`${location}`].images;
+  }
+  return [];
+}

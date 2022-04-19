@@ -5,30 +5,29 @@ const imageModule = NativeModules.ImageModule;
 
 export default class ImageComponent extends React.Component {
   state = {
-    source: this.props.iconImg,
+    source: `img/attractions/${this.props.infoImg}`,
     width: this.props.width ? this.props.width : 100,
     height: this.props.height ? this.props.height : 100,
     isMouseOver: false,
   };
 
   onMouseOn () {
-    imageModule.resizeTooltip (this.props.index, 300, 300);
+    imageModule.resizeTooltip(this.props.index, 450, 450);
+    imageModule.reangleTooltip(this.props.index, 11, 1);
     this.setState ({
-      source: `img/attractions/${this.props.infoImg}`,
-      width: 300,
-      height: 200,
+      width: 450,
+      height: 450,
       isMouseOver: true,
     });
   }
 
-  onMouseOut () {
+  onMouseOut() {
     imageModule.resizeTooltip (
       this.props.index,
       this.props.width,
       this.props.height
     );
     this.setState ({
-      source: this.props.iconImg,
       width: this.props.width,
       height: this.props.height,
       isMouseOver: false,
