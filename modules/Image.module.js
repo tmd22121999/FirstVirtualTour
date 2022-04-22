@@ -26,6 +26,8 @@ export class ImageModule extends Module {
           r360.createRoot ('ImageComponent', {
             width: item.width,
             height: item.height,
+            yaw: item.yaw,
+            pitch: item.pitch,
             iconImg: 'icons/test.png',
             index: index,
             text: item.text,
@@ -42,6 +44,20 @@ export class ImageModule extends Module {
   }
   reangleTooltip (index, yaw,pitch) {
       this.surfaces[index].setAngle (yaw, pitch);
+  }
+  reangleTooltipFollowCam(index) {
+    qx = r360._cameraQuat[0];
+    qy=r360._cameraQuat[1];
+    qz = r360._cameraQuat[2];
+    qw = r360._cameraQuat[3];
+    var rollcal  = Math.atan2(2*qy*qw - 2*qx*qz, 1 - 2*qy*qy - 2*qz*qz);
+    var pitchcal = Math.atan2(2*qx*qw - 2*qy*qz, 1 - 2*qx*qx - 2*qz*qz);
+    var yawcal   =  Math.asin(2*qx*qy + 2*qz*qw);
+    this.surfaces[0].setAngle(-rollcal, pitchcal);
+    console.log(r360._cameraQuat);
+    console.log(yawcal);
+    console.log(pitchcal);
+    console.log(rollcal);
   }
   detachAll () {
     for (let i = 0; i < this.roots.length; i++) {

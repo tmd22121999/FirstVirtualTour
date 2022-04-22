@@ -32,7 +32,7 @@ export default (locations = {
       {
         width: 400,
         height: 400,
-        yaw: 11.3,
+        yaw: 0,
         pitch: 0.1,
         text: 'abctesy',
         img: 'youth_center.jpg',

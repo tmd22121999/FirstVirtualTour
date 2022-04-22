@@ -1,5 +1,6 @@
 import React from 'react';
-import {asset, Image, View, StyleSheet, NativeModules, Text} from 'react-360';
+import { asset, Image, View, StyleSheet, NativeModules, Text } from 'react-360';
+
 
 const imageModule = NativeModules.ImageModule;
 
@@ -13,7 +14,7 @@ export default class ImageComponent extends React.Component {
 
   onMouseOn () {
     imageModule.resizeTooltip(this.props.index, 450, 450);
-    imageModule.reangleTooltip(this.props.index, 11, 1);
+    imageModule.reangleTooltipFollowCam(this.props.index);
     this.setState ({
       width: 450,
       height: 450,

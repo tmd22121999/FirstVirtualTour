@@ -12,7 +12,6 @@ function init(bundle, parent, options = {}) {
     nativeModules: [new TooltipModule(), new TransitionModule(), new ImageModule()],
     ...options,
   });
-
   r360.renderToSurface(r360.createRoot("MainComponent"), r360.getDefaultSurface());
   r360.compositor.setBackground(r360.getAssetURL("img/360/city_center.jpg"));
 }
